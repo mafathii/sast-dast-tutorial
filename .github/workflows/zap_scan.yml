@@ -20,3 +20,9 @@ jobs:
           target: 'https://preview.owasp-juice.shop'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a -j'
+      
+      - name: Upload ZAP Scan Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-scan-results
+          path: report.md  # or use 'report_html.html', 'report_md.md' if available
